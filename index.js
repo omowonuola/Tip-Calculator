@@ -63,6 +63,24 @@ function calculateBill() {
     document.getElementById("share").innerHTML = sharedBill;
 }
 // click to call function
-document.getElementById("calbtn").onclick = function() {
+document.getElementById("calbtn").addEventListener('click', function() {
     calculateBill();
+});
+
+function resetBill() {
+    let billAmt = document.getElementById("billamt").value = '';
+    let serviceRate = document.getElementById("servicerate").value = '';
+    let numPeople = document.getElementById("numpeople").value = '';
+
+    document.getElementById("tip").innerHTML = "";
+    document.getElementById("share").innerHTML = "";
+    document.getElementById("shared").innerHTML = "";
+    document.getElementById("bills").innerHTML = "";
+    document.getElementById("sharedbill").style.display = "";
 };
+
+
+// reset click to call function
+document.getElementById("restbtn").addEventListener('click', function() {
+    resetBill();
+})
